@@ -1,1 +1,12 @@
-# school-management
+# SchoolManager
+
+This repository contains a Dockerized Laravel 10 application for managing students, tutors and materials.
+
+## Setup
+
+1. Build and start the containers:
+   ```bash
+   docker-compose up --build
+   ```
+2. Visit `http://localhost:8000` for the public site.
+3. Admin panel available at `http://localhost:8000/admin` (login with `admin@example.com` / `password`).
