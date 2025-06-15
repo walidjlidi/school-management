@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,23 @@
 <body class="bg-gray-100">
 <nav class="bg-gray-800 mb-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-            <div class="flex items-center space-x-4 text-white">
+        <div class="flex items-center justify-between h-16 text-white">
+            <div class="flex items-center space-x-4 rtl:space-x-reverse">
                 <a class="font-bold" href="{{ route('home') }}">SchoolManager</a>
-                <a href="{{ route('students.index') }}" class="hover:underline">Students</a>
-                <a href="{{ route('tutors.index') }}" class="hover:underline">Tutors</a>
-                <a href="{{ route('materials.index') }}" class="hover:underline">Materials</a>
+                <a href="{{ route('students.index') }}" class="hover:underline">الطلاب</a>
+                <a href="{{ route('tutors.index') }}" class="hover:underline">المعلمين</a>
+                <a href="{{ route('materials.index') }}" class="hover:underline">المواد</a>
+            </div>
+            <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                @auth
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button class="hover:underline">تسجيل الخروج</button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="hover:underline">دخول</a>
+                    <a href="{{ route('register') }}" class="hover:underline">تسجيل</a>
+                @endauth
             </div>
         </div>
     </div>

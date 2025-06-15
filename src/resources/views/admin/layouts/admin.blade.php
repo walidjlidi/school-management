@@ -15,6 +15,7 @@
                 <a href="{{ route('admin.students.index') }}" class="hover:underline">الطلاب</a>
                 <a href="{{ route('admin.tutors.index') }}" class="hover:underline">المعلمين</a>
                 <a href="{{ route('admin.materials.index') }}" class="hover:underline">المواد</a>
+                <a href="{{ route('admin.users.index') }}" class="hover:underline">المستخدمون</a>
             </div>
             <form action="{{ route('admin.logout') }}" method="POST">
                 @csrf
