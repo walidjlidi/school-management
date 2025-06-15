@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Edit Material</h1>
-<form action="{{ route('materials.update', $material) }}" method="POST">
+<h1 class="text-xl font-bold mb-4">تعديل مادة</h1>
+<form action="{{ route('materials.update', $material) }}" method="POST" class="space-y-4">
     @method('PUT')
-    @include('shared.form', ['item' => $material, 'tutors' => $tutors])
+    @include('materials._form', ['material' => $material, 'tutors' => $tutors])
+
 </form>
 @endsection

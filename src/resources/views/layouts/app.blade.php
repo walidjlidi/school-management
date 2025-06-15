@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/4.0.0"></script>
     <title>School Manager</title>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('home') }}">SchoolManager</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="{{ route('students.index') }}">Students</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('tutors.index') }}">Tutors</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('materials.index') }}">Materials</a></li>
-            </ul>
+<body class="bg-gray-100">
+<nav class="bg-gray-800 mb-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 text-white">
+            <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                <a class="font-bold" href="{{ route('home') }}">SchoolManager</a>
+                <a href="{{ route('students.index') }}" class="hover:underline">الطلاب</a>
+                <a href="{{ route('tutors.index') }}" class="hover:underline">المعلمين</a>
+                <a href="{{ route('materials.index') }}" class="hover:underline">المواد</a>
+            </div>
+            <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                @auth
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button class="hover:underline">تسجيل الخروج</button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="hover:underline">دخول</a>
+                    <a href="{{ route('register') }}" class="hover:underline">تسجيل</a>
+                @endauth
+            </div>
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     @yield('content')
 </div>
 </body>

@@ -1,30 +1,18 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-<div class="row text-center">
-    <div class="col-md-4">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">إجمالي عدد الطلاب</h5>
-                <p class="display-5">{{ $students }}</p>
-            </div>
-        </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+    <div class="bg-white rounded shadow p-6">
+        <h5 class="mb-2">إجمالي عدد الطلاب</h5>
+        <p class="text-4xl font-bold">{{ $students }}</p>
     </div>
-    <div class="col-md-4">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">إجمالي عدد المعلمين</h5>
-                <p class="display-5">{{ $tutors }}</p>
-            </div>
-        </div>
+    <div class="bg-white rounded shadow p-6">
+        <h5 class="mb-2">إجمالي عدد المعلمين</h5>
+        <p class="text-4xl font-bold">{{ $tutors }}</p>
     </div>
-    <div class="col-md-4">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">إجمالي عدد المواد</h5>
-                <p class="display-5">{{ $materials }}</p>
-            </div>
-        </div>
+    <div class="bg-white rounded shadow p-6">
+        <h5 class="mb-2">إجمالي عدد المواد</h5>
+        <p class="text-4xl font-bold">{{ $materials }}</p>
     </div>
 </div>
 @endsection

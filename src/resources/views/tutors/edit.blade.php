@@ -1,14 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Edit Tutor</h1>
-<form action="{{ route('tutors.update', $tutor) }}" method="POST">
+<h1 class="text-xl font-bold mb-4">تعديل معلم</h1>
+<form action="{{ route('tutors.update', $tutor) }}" method="POST" class="space-y-4">
     @method('PUT')
-    @include('shared.form', ['item' => $tutor])
-    <div class="mb-3">
-        <label class="form-label">Specialization</label>
-        <input type="text" name="specialization" class="form-control" value="{{ old('specialization', $tutor->specialization) }}" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Save</button>
+    @include('tutors._form', ['tutor' => $tutor])
+
 </form>
 @endsection

@@ -1,10 +1,10 @@
-@extends('admin.layouts.admin')
+@extends('layouts.app')
 
 @section('content')
 <div class="flex justify-center">
     <div class="w-full max-w-md">
         <h1 class="mb-6 text-center text-2xl font-bold">تسجيل الدخول</h1>
-        <form method="POST" action="{{ route('admin.login.submit') }}" class="space-y-4 bg-white p-6 shadow rounded">
+        <form method="POST" action="{{ route('login') }}" class="space-y-4 bg-white p-6 shadow rounded">
             @csrf
             <div>
                 <label class="block mb-1">البريد الإلكتروني</label>

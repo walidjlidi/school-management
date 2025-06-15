@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Tutor Details</h1>
-<ul class="list-group mb-3">
-    <li class="list-group-item">Name: {{ $tutor->first_name }} {{ $tutor->last_name }}</li>
-    <li class="list-group-item">Email: {{ $tutor->email }}</li>
-    <li class="list-group-item">Specialization: {{ $tutor->specialization }}</li>
+<h1 class="text-xl font-bold mb-4">تفاصيل المعلم</h1>
+<ul class="mb-4 space-y-2">
+    <li>الاسم: {{ $tutor->first_name }} {{ $tutor->last_name }}</li>
+    <li>البريد الإلكتروني: {{ $tutor->email }}</li>
+    <li>التخصص: {{ $tutor->specialization }}</li>
 </ul>
-<a class="btn btn-warning" href="{{ route('tutors.edit', $tutor) }}">Edit</a>
-<form action="{{ route('tutors.destroy', $tutor) }}" method="POST" style="display:inline-block">
+<a class="text-yellow-600 mr-2" href="{{ route('tutors.edit', $tutor) }}">تعديل</a>
+<form action="{{ route('tutors.destroy', $tutor) }}" method="POST" class="inline">
     @csrf
     @method('DELETE')
-    <button class="btn btn-danger" onclick="return confirm('Delete?')">Delete</button>
+    <button class="text-red-600" onclick="return confirm('Delete?')">حذف</button>
 </form>
 @endsection
