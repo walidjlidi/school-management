@@ -1,5 +1,6 @@
 # SchoolManager
 
+
 This repository contains a Dockerized Laravel 10 application for managing students, tutors and materials. All pages use Tailwind CSS 4 with an Arabic RTL layout and provide login, registration and user management.
 
 ## Requirements
@@ -16,10 +17,12 @@ prefer a manual setup you will need:
 
 ## Setup with Docker
 
+
 1. Build and start the containers:
    ```bash
    docker-compose up --build
    ```
+
    On the first run the `init.sh` script inside the container will install
    Laravel, copy the source files and run the database migrations and seeders.
 2. Visit `http://localhost:8000` for the public site.
@@ -29,7 +32,7 @@ prefer a manual setup you will need:
 ### Updating containers
 
 After pulling the latest code, rebuild the containers to install any new PHP
-dependencies and apply database changes:
+
 
 ```bash
 docker-compose build
@@ -46,10 +49,13 @@ If you add Composer packages, install them with:
 ```bash
 docker-compose run --rm app composer install
 ```
-### Composer inside the container
 
-If the host environment does not have Composer installed you can execute any
-Composer command through the `app` service:
+
+## Composer inside the container
+
+The host environment may not have Composer installed. To run Composer
+commands, use the `app` service:
+
 
 ```bash
 docker-compose run --rm app composer --version
