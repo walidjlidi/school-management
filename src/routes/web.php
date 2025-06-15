@@ -8,9 +8,11 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AdminDashboardController::class, 'publicHome'])->name('home');
+
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);

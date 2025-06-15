@@ -5,5 +5,6 @@
 <form action="{{ route('tutors.update', $tutor) }}" method="POST" class="space-y-4">
     @method('PUT')
     @include('tutors._form', ['tutor' => $tutor])
+
 </form>
 @endsection
