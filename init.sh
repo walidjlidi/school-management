@@ -4,7 +4,10 @@ set -e
 cd /var/www
 
 if [ ! -f artisan ]; then
-    composer create-project --prefer-dist laravel/laravel .
+    TMP_DIR=$(mktemp -d)
+    composer create-project --prefer-dist laravel/laravel "$TMP_DIR"
+    cp -r "$TMP_DIR"/. .
+    rm -rf "$TMP_DIR"
 fi
 
 # Copy custom project files

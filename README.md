@@ -8,5 +8,6 @@ This repository contains a Dockerized Laravel 10 application for managing studen
    ```bash
    docker-compose up --build
    ```
+   The first run will install Laravel and copy the project files automatically.
 2. Visit `http://localhost:8000` for the public site.
 3. Admin panel available at `http://localhost:8000/admin` (login with `admin@example.com` / `password`).
