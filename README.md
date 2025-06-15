@@ -3,6 +3,27 @@
 This repository contains a Dockerized Laravel 10 application for managing students, tutors and materials. All pages now use Tailwind CSS 4 for styling.
 
 
+
+## Updating
+
+After pulling the latest code, rebuild the containers to install any new PHP dependencies and apply database changes:
+
+```bash
+docker-compose build
+```
+
+Then run migrations inside the app container:
+
+```bash
+docker-compose run --rm app php artisan migrate --seed
+```
+
+If you add Composer packages, install them with:
+
+```bash
+docker-compose run --rm app composer install
+```
+
 ## Setup
 
 1. Build and start the containers:
