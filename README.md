@@ -24,6 +24,17 @@ If you add Composer packages, install them with:
 docker-compose run --rm app composer install
 ```
 
+## Composer inside the container
+
+The host environment may not have Composer installed. To run Composer
+commands, use the `app` service:
+
+```bash
+docker-compose run --rm app composer --version
+```
+
+Replace `--version` with any Composer command you need.
+
 ## Setup
 
 1. Build and start the containers:
