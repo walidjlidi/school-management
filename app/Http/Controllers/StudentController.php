@@ -17,7 +17,8 @@ class StudentController extends Controller
             ->when($search, function ($query, $search) {
                 $query->where('first_name', 'like', "%{$search}%")
                     ->orWhere('last_name', 'like', "%{$search}%")
-                    ->orWhere('email', 'like', "%{$search}%");
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('date_of_birth', 'like', "%{$search}%");
             })
             ->paginate(10)
             ->withQueryString();

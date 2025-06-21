@@ -20,5 +20,12 @@
             <i class="fa fa-user ml-2"></i>
             <span>المستخدمون</span>
         </a>
+        <form method="POST" action="{{ route('admin.logout') }}" class="mt-4">
+            @csrf
+            <button class="w-full flex items-center px-2 py-2 rounded hover:bg-gray-700 text-left">
+                <i class="fa fa-sign-out-alt ml-2"></i>
+                <span>خروج</span>
+            </button>
+        </form>
     </nav>
 </div>
