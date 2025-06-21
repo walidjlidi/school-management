@@ -62,6 +62,7 @@ docker-compose run --rm app composer --version
 ```
 
 Replace `--version` with the command you need.
+For a detailed walkthrough of manual installation, see [docs/LOCAL_SETUP.md](docs/LOCAL_SETUP.md).
 
 ### Manual setup (without Docker)
 
