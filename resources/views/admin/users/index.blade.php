@@ -1,4 +1,4 @@
-@extends('admin.layouts.admin')
+@extends('layouts.admin')
 
 @section('content')
 <h1 class="text-xl font-bold mb-4">المستخدمون</h1>

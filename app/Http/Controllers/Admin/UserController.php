@@ -26,6 +26,6 @@ class UserController extends Controller
         $user->is_active = $request->has('is_active');
         $user->save();
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.users.index')->with('success', 'تم تحديث المستخدم');
     }
 }
