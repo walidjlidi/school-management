@@ -7,6 +7,7 @@
     <title>School Manager</title>
 </head>
 <body class="bg-gray-100">
+@unless (Request::routeIs('login') || Request::routeIs('register') || Request::is('/'))
 <nav class="bg-gray-800 mb-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 text-white">
@@ -30,6 +31,7 @@
         </div>
     </div>
 </nav>
+@endunless
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     @yield('content')
 </div>
