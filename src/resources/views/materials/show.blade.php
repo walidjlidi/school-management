@@ -7,8 +7,8 @@
     <li>المعلم: {{ $material->tutor->first_name }} {{ $material->tutor->last_name }}</li>
     <li>الوصف: {{ $material->description }}</li>
 </ul>
-<a class="text-yellow-600 mr-2" href="{{ route('materials.edit', $material) }}">تعديل</a>
-<form action="{{ route('materials.destroy', $material) }}" method="POST" class="inline">
+<a class="text-yellow-600 mr-2" href="{{ route('admin.materials.edit', $material) }}">تعديل</a>
+<form action="{{ route('admin.materials.destroy', $material) }}" method="POST" class="inline">
     @csrf
     @method('DELETE')
     <button class="text-red-600" onclick="return confirm('Delete?')">حذف</button>

@@ -10,8 +10,12 @@ use Illuminate\View\View;
 
 class LoginController extends Controller
 {
-    public function showLoginForm(): View
+    public function showLoginForm(): View|RedirectResponse
     {
+        if (Auth::check()) {
+            return redirect()->route('home');
+        }
+
         return view('auth.login');
     }
 
@@ -24,7 +28,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials + ['is_active' => true])) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended(route('home'));
         }
 
         return back()->withErrors([
