@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-cd /var/www
+cd .
 
 if [ ! -f artisan ]; then
     TMP_DIR=$(mktemp -d)
