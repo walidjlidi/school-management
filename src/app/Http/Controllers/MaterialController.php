@@ -23,7 +23,7 @@ class MaterialController extends Controller
     public function store(MaterialRequest $request): RedirectResponse
     {
         Material::create($request->validated());
-        return redirect()->route('materials.index');
+        return redirect()->route('admin.materials.index');
     }
 
     public function show(Material $material): View
@@ -39,12 +39,12 @@ class MaterialController extends Controller
     public function update(MaterialRequest $request, Material $material): RedirectResponse
     {
         $material->update($request->validated());
-        return redirect()->route('materials.index');
+        return redirect()->route('admin.materials.index');
     }
 
     public function destroy(Material $material): RedirectResponse
     {
         $material->delete();
-        return redirect()->route('materials.index');
+        return redirect()->route('admin.materials.index');
     }
 }

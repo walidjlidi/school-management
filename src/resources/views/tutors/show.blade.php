@@ -7,8 +7,8 @@
     <li>البريد الإلكتروني: {{ $tutor->email }}</li>
     <li>التخصص: {{ $tutor->specialization }}</li>
 </ul>
-<a class="text-yellow-600 mr-2" href="{{ route('tutors.edit', $tutor) }}">تعديل</a>
-<form action="{{ route('tutors.destroy', $tutor) }}" method="POST" class="inline">
+<a class="text-yellow-600 mr-2" href="{{ route('admin.tutors.edit', $tutor) }}">تعديل</a>
+<form action="{{ route('admin.tutors.destroy', $tutor) }}" method="POST" class="inline">
     @csrf
     @method('DELETE')
     <button class="text-red-600" onclick="return confirm('Delete?')">حذف</button>
