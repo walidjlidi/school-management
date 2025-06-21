@@ -9,10 +9,16 @@
             <div>
                 <label class="block mb-1">الاسم</label>
                 <input type="text" name="name" class="w-full border rounded px-3 py-2" value="{{ old('name') }}" required>
+                @error('name')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
             </div>
             <div>
                 <label class="block mb-1">البريد الإلكتروني</label>
                 <input type="email" name="email" class="w-full border rounded px-3 py-2" value="{{ old('email') }}" required>
+                @error('email')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
             </div>
             <div>
                 <label class="block mb-1">الدور</label>
@@ -20,10 +26,16 @@
                     <option value="student" @selected(old('role') == 'student')>طالب</option>
                     <option value="tutor" @selected(old('role') == 'tutor')>معلم</option>
                 </select>
+                @error('role')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
             </div>
             <div>
                 <label class="block mb-1">كلمة المرور</label>
                 <input type="password" name="password" class="w-full border rounded px-3 py-2" required>
+                @error('password')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
             </div>
             <div>
                 <label class="block mb-1">تأكيد كلمة المرور</label>
