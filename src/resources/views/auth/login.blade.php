@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex justify-center">
-    <div class="w-full max-w-md">
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600">
+    <div class="w-full max-w-md bg-white p-8 rounded shadow-lg">
         <h1 class="mb-6 text-center text-2xl font-bold">تسجيل الدخول</h1>
-        <form method="POST" action="{{ route('login') }}" class="space-y-4 bg-white p-6 shadow rounded">
+        <form method="POST" action="{{ route('login') }}" class="space-y-4">
             @csrf
             <div>
                 <label class="block mb-1">البريد الإلكتروني</label>

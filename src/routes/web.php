@@ -11,7 +11,11 @@ use App\Http\Controllers\Auth\RegisterController;
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [AdminDashboardController::class, 'publicHome'])->name('home');
+// Show the login page on the landing route
+Route::get('/', [LoginController::class, 'showLoginForm']);
+
+// Authenticated users land on the dashboard
+Route::get('/dashboard', [AdminDashboardController::class, 'publicHome'])->name('home');
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
