@@ -15,7 +15,10 @@ class MaterialController extends Controller
     {
         $search = $request->input('search');
         $materials = Material::with('tutor')
-            ->when($search, fn($q) => $q->where('title', 'like', "%{$search}%"))
+            ->when($search, function($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%");
+            })
             ->paginate(10)
             ->withQueryString();
 
