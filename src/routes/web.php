@@ -23,12 +23,6 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 
-// Require users to be authenticated before accessing any resources
-Route::middleware('auth')->group(function () {
-    Route::resource('students', StudentController::class);
-    Route::resource('tutors', TutorController::class);
-    Route::resource('materials', MaterialController::class);
-});
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');

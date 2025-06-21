@@ -23,7 +23,7 @@ class StudentController extends Controller
     public function store(StudentRequest $request): RedirectResponse
     {
         Student::create($request->validated());
-        return redirect()->route('students.index');
+        return redirect()->route('admin.students.index');
     }
 
     public function show(Student $student): View
@@ -39,12 +39,12 @@ class StudentController extends Controller
     public function update(StudentRequest $request, Student $student): RedirectResponse
     {
         $student->update($request->validated());
-        return redirect()->route('students.index');
+        return redirect()->route('admin.students.index');
     }
 
     public function destroy(Student $student): RedirectResponse
     {
         $student->delete();
-        return redirect()->route('students.index');
+        return redirect()->route('admin.students.index');
     }
 }
