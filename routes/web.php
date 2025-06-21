@@ -6,6 +6,7 @@ use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\Admin\VideoLibraryController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -36,6 +37,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('students', StudentController::class);
         Route::resource('tutors', TutorController::class);
         Route::resource('materials', MaterialController::class);
+        Route::get('videos', [VideoLibraryController::class, 'index'])->name('videos.index');
         Route::resource('users', AdminUserController::class)->only(['index','update']);
     });
 });
