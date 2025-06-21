@@ -22,7 +22,7 @@ class TutorController extends Controller
     public function store(TutorRequest $request): RedirectResponse
     {
         Tutor::create($request->validated());
-        return redirect()->route('tutors.index');
+        return redirect()->route('admin.tutors.index');
     }
 
     public function show(Tutor $tutor): View
@@ -38,12 +38,12 @@ class TutorController extends Controller
     public function update(TutorRequest $request, Tutor $tutor): RedirectResponse
     {
         $tutor->update($request->validated());
-        return redirect()->route('tutors.index');
+        return redirect()->route('admin.tutors.index');
     }
 
     public function destroy(Tutor $tutor): RedirectResponse
     {
         $tutor->delete();
-        return redirect()->route('tutors.index');
+        return redirect()->route('admin.tutors.index');
     }
 }

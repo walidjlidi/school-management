@@ -13,9 +13,6 @@
         <div class="flex items-center justify-between h-16 text-white">
             <div class="flex items-center space-x-4 rtl:space-x-reverse">
                 <a class="font-bold" href="{{ route('home') }}">SchoolManager</a>
-                <a href="{{ route('students.index') }}" class="hover:underline">الطلاب</a>
-                <a href="{{ route('tutors.index') }}" class="hover:underline">المعلمين</a>
-                <a href="{{ route('materials.index') }}" class="hover:underline">المواد</a>
             </div>
             <div class="flex items-center space-x-4 rtl:space-x-reverse">
                 @auth
